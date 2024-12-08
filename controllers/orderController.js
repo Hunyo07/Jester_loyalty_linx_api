@@ -107,6 +107,7 @@ const addOrder = async (req, res) => {
         order_status: "pending",
         payment_method: paymentMethod,
         order_date: new Date(),
+        grand_price: calculateTotal(orderDetails),
         orderDetails,
       });
 
