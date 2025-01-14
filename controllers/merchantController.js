@@ -282,7 +282,7 @@ const approveBorrowerRequest = async (req, res) => {
     const merchantLogo = merchant.profilePicture;
     const userId = requestToApprove.userId;
     const amount = creditRequestToUpdate.creditAmount;
-    const description = "Application credit approval";
+    const description = "Loan";
     const transactionType = "credit_applied";
 
     const transaction = new Transaction({
