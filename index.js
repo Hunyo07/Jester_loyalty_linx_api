@@ -15,7 +15,8 @@ import uploadRoutes from "./routes/uploadRoute.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import orderDetailsRoutes from "./routes/orderDetailesRoutes.js";
-import transactionRoutes from "./routes/transactionsRoutes.js"
+import transactionRoutes from "./routes/transactionsRoutes.js";
+import themeRoutes from "./routes/themeRoutes.js";
 // initialize app
 const app = express();
 const port = process.env.PORT || 5000;
@@ -72,3 +73,4 @@ app.use("/api/logs", logRoutes);
 app.use("/api/upload", uploadRoutes);
 app.use("/api/order", orderRoutes);
 app.use("/api/orderDetails", orderDetailsRoutes);
+app.use("/api/theme", themeRoutes);
