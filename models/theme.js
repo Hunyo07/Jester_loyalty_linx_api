@@ -6,7 +6,7 @@ const themeSchema = new mongoose.Schema({
   secondaryColor: { type: String, required: true },
   textColor: { type: String, required: true },
   backgroundColor: { type: String, required: true },
-  themeLogo: { type: String, required: true },
+  // themeLogo: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
 });
 

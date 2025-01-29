@@ -73,8 +73,6 @@ const adminLogin = async (req, res) => {
   }
 };
 
-
-
 const getAllUserAccount = async (req, res) => {
   try {
     const { role } = req.body;
