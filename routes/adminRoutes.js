@@ -26,4 +26,61 @@ router.post(
   admin.getAllUserAccount
 );
 
+// Merchant staff management routes
+router.post(
+  "/merchant-staff",
+  adminProtect,
+  protectByRole(adminRole),
+  admin.addMerchantStaff
+);
+router.put(
+  "/merchant-staff/:staffId",
+  adminProtect,
+  protectByRole(adminRole),
+  admin.updateMerchantStaff
+);
+
+// Credit management routes
+router.put(
+  "/credit-request/:requestId",
+  adminProtect,
+  protectByRole(adminRole),
+  admin.handleCreditRequest
+);
+
+// Transaction management routes
+router.get(
+  "/transactions",
+  adminProtect,
+  protectByRole(adminRole),
+  admin.getCustomerTransactions
+);
+
+router.get(
+  "/borrowers/:merchantId",
+  adminProtect,
+  admin.getBorrowersByMerchant
+);
+
+router.get(
+  "/analytics",
+  adminProtect,
+  protectByRole(adminRole),
+  admin.getMerchantAnalytics
+);
+
+// Product management routes
+router.post(
+  "/products",
+  adminProtect,
+  protectByRole(adminRole),
+  admin.manageMerchantProduct
+);
+router.put(
+  "/products/:productId",
+  adminProtect,
+  protectByRole(adminRole),
+  admin.manageMerchantProduct
+);
+
 export default router;

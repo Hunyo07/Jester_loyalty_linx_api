@@ -26,6 +26,13 @@ dotenv.config();
 app.use(cors());
 // app.use(
 //   cors({
+//     origin: "http://192.168.100.243:5173", // Replace with the IP/port of your Vue app
+//     methods: ["GET", "POST"], // Allow specific methods
+//     allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
+//   })
+// );
+// app.use(
+//   cors({
 //     origin: "https://loyalty-linx-web.vercel.app",
 //     credentials: true,
 //     methods: ["GET", "POST", "PUT", "DELETE"],

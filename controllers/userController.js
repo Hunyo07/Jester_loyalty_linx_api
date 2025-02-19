@@ -320,10 +320,19 @@ const loginUserMobileNo = async (req, res) => {
     //   { expiresIn: "30d" }
     // );
 
-    sendVerificationCode(user.mobileNo, user.secretCode);
+    const token = jwt.sign(
+      {
+        userId: user._id,
+        secretCode: user.secretCode,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "30d" }
+    );
+    // sendVerificationCode(user.mobileNo, user.secretCode);
     res.status(200).send({
       // token,
       userId: user._id,
+      token: token,
       // isFirstTimeLogin: user.isFirstTimeLogin,
     });
     // }
@@ -430,7 +439,6 @@ const validateCodeLogin = async (req, res) => {
     if (secretCode !== user.secretCode) {
       return res.status(400).send({ message: "Invalid secret code" });
     }
-
     // user.isFirstTimeLogin = false;
     user.save();
 

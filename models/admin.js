@@ -5,6 +5,11 @@ const adminSchema = new mongoose.Schema(
     email: { type: String, required: true, unique: true },
     name: { type: String, required: true },
     password: { type: String, required: true },
+    merchantId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Merchant",
+      required: true,
+    },
     profilePicture: {
       type: String,
       default:
