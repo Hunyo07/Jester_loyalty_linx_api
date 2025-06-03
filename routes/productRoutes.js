@@ -13,4 +13,5 @@ router.put("/update/:id", prod.updateProduct);
 
 router.delete("/delete/:id", prod.deleteProduct);
 
+router.get("/merchant/:merchantId", prod.getProductsByMerchantId);
 export default router;

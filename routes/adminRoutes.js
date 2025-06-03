@@ -70,12 +70,7 @@ router.get(
 );
 
 // Product management routes
-router.post(
-  "/products",
-  adminProtect,
-  protectByRole(adminRole),
-  admin.manageMerchantProduct
-);
+router.post("/products", adminProtect, admin.manageMerchantProduct);
 router.put(
   "/products/:productId",
   adminProtect,
